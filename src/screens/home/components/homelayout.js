@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import WINDOW from "../../../constants/layout";
 
 import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
@@ -7,7 +7,10 @@ const HomeLayout = props => {
   return (
     <View style={styles.container}>
       <View style={styles.row1}>
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={props.goToInfo
+        } 
+        >
           <Image 
           source={require("../../../assets/home/Recurso_58.png")} 
           style={styles.row1image}
@@ -24,9 +27,11 @@ const HomeLayout = props => {
         source={require("../../../assets/home/Recurso_55.png")} 
         style={styles.row2image2}
         />
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={props.goToLibrary} 
+        >
         <Image 
-        source={require("../../../assets/home/Recurso_60.png")} 
+        source={require("../../../assets/home/nuevo_boton.png")} 
         style={styles.row2button}
         />
         </TouchableOpacity>
