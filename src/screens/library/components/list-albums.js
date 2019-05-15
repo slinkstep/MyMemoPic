@@ -5,7 +5,20 @@ import { FlatList, View, Image, StyleSheet, TouchableOpacity } from "react-nativ
 const ListAlbums = (props) => {
 
     state={
-        list: []
+        list: [
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png"),
+          require("../../../assets/library/Recurso_72.png")
+        ]
     }
 
 
@@ -18,13 +31,9 @@ const ListAlbums = (props) => {
         // ListEmptyComponent={this.renderEmpty}
         // ItemSeparatorComponent={this.itemSeparator}
         // renderItem={this.renderItem}
+        renderItem={({item}) => <Image source={item}></Image>}
       />
-    <TouchableOpacity>
-      <Image
-        style={styles.image}
-        source={require("../../../assets/library/Recurso_74.png")}
-       />
-       </TouchableOpacity>
+   
     </View>
   );
 };
