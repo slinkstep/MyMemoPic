@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from "./src/redux/reducers/store";
+
 import Home from "./src/screens/home/containers/home";
 import Load from "./src/screens/load/containers/load";
 import Library from "./src/screens/library/containers/library";
@@ -21,13 +25,25 @@ export default class App extends Component {
       }.bind(this),
       3000
     );
+
+   
   }
 
   render() {
     if (this.state.isLoading) {
       return <Load />;
     } else {
-      return <AppNavigator></AppNavigator>;
+      return (
+        <Provider
+        store={store}
+      >
+        <PersistGate
+          persistor={persistor}
+        >
+      <AppNavigator></AppNavigator>
+      </PersistGate>
+      </Provider>
+      );
     }
   }
 }

@@ -1,41 +1,67 @@
 import React from "react";
 
-import { FlatList, View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  FlatList,
+  View,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  ImageBackground,
+  Text
+} from "react-native";
 
-const ListAlbums = (props) => {
+import {ACTIONS} from "../../../constants/actiontypes"
 
-    state={
-        list: []
-    }
+const ListAlbums = props => {
+  
 
+  keyExtractor = (item,index)  => index.toString()
+  
+  border = (item) => {
+    return props.selected === item.id ? 'white' : 'green'
+  }
 
   return (
-    <View>
+    
       <FlatList
         horizontal
-        // keyExtractor={this.keyExtractor}
-        data={this.state.list}
-        // ListEmptyComponent={this.renderEmpty}
-        // ItemSeparatorComponent={this.itemSeparator}
-        // renderItem={this.renderItem}
+        keyExtractor={this.keyExtractor}
+        data={props.covers}
+        ListEmptyComponent={<Text style={styles.wrapper}>NO ALBUMS</Text>}
+      
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => props.onPress(ACTIONS.SELECT_COVER,item.id) } >
+            <ImageBackground style={[styles.wrapper, {borderColor: this.border(item)}]} source={item.source}>
+              <Text>HI</Text>
+            </ImageBackground>
+          </TouchableOpacity>
+        )}
+
+        extraData={props.selected}
+        
       />
-    <TouchableOpacity>
-      <Image
-        style={styles.image}
-        source={require("../../../assets/library/Recurso_74.png")}
-       />
-       </TouchableOpacity>
-    </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
-
-    image: {
-        width: 50,
-        height: 50
-    }
-
-})
+  container: {
+    backgroundColor: "green",
+    
+  },
+  image: {
+    resizeMode: "contain"
+  },
+  wrapper: {
+    width: 90,
+    height: 120,
+    borderRadius: 10,
+    marginHorizontal: 10,
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 2
+  }
+});
 
 export default ListAlbums;
