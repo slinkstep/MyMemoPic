@@ -1,0 +1,6 @@
+export const ACTIONS = {
+
+    SET_TITLE:'SET_TITLE',
+    SET_DATE:'SET_DATE',
+    SELECT_COVER:'SELECT_COVER'
+}
