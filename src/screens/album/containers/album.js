@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import AlbumLayout from "../components/album-layout";
 import { ImagePicker } from "expo";
+import { connect } from 'react-redux';
 
 class Album extends Component {
 
@@ -21,14 +22,34 @@ class Album extends Component {
         }
       };
       
-
+     
 
 
   render() {
+    const layoutprops = {
+
+      title: this.props.title
+        
+    }
+
     let { image } = this.state;
 
-    return <AlbumLayout image={image} picker={this._pickImage}/>;
+    return <AlbumLayout image={image} picker={this._pickImage} {...layoutprops}/>;
   }
 }
 
-export default Album;
+mapStateToProps = (state) => {
+  return {
+      title: state.currentAlbum.title,
+  }
+}
+
+mapDispatchToProps = (dispatch) => {
+  return {
+      saveTitle: (actionType, value) => dispatch(setTitle(actionType, value)),
+      setDate: (actionType, value) => dispatch(setDate(actionType, value)),
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (Album);

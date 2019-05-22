@@ -3,7 +3,7 @@ import WINDOW from "../constants/layout";
 
 import { View, Image, StyleSheet, TouchableOpacity, Text } from "react-native";
 const Header = props => {
-  console.log(props);
+  // console.log(props);
   return (
     <View style={styles.maincontainer}>
       <View style={styles.container}>

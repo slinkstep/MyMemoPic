@@ -18,21 +18,24 @@ const ListAlbums = props => {
   keyExtractor = (item,index)  => index.toString()
   
   border = (item) => {
-    return props.selected === item.id ? 'white' : 'green'
+    return props.selected === item.id ? 'orange' : 'grey'
   }
+  
 
   return (
+
+      
     
       <FlatList
         horizontal
         keyExtractor={this.keyExtractor}
-        data={props.covers}
+        data={props.covers }
         ListEmptyComponent={<Text style={styles.wrapper}>NO ALBUMS</Text>}
       
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => props.onPress(ACTIONS.SELECT_COVER,item.id) } >
-            <ImageBackground style={[styles.wrapper, {borderColor: this.border(item)}]} source={item.source}>
-              <Text>HI</Text>
+            <ImageBackground style={[styles.wrapper, {borderColor: this.border(item)}]} source={item.source || item.coverUri}>
+              <Text>{item.title}</Text>
             </ImageBackground>
           </TouchableOpacity>
         )}
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2
+    borderWidth: 3
   }
 });
 

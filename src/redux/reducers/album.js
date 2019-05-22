@@ -1,29 +1,23 @@
-import { ACTIONS } from '../../constants/actiontypes';
+import { ACTIONS } from "../../constants/actiontypes";
 
 const initialState = {
-    listAlbums: {}
-}
+  listAlbums: []
+};
 
-export default Album = (state = initialState, action) => {
-
-switch (action.type) {
-    case ACTIONS.CREATE_ALBUM:
-        return{
-            ...state,
-            listAlbums:{
-                ...state.listAlbums,
-                [action.payload.value.id]:{
-                    ...action.payload.value
-                }
-            }
-            
-
-    }
+export default (Album = (state = initialState, action) => {
+  switch (action.type) {
+    case ACTIONS.SET_NEW_ALBUM:
+      return {
+        ...state,
+        listAlbums: [
+          ...state.listAlbums,
+          {
+            ...action.payload.value
+          }
+        ]
+      };
 
     default:
-            return state;
-
-
-}
-
-}
+      return state;
+  }
+});

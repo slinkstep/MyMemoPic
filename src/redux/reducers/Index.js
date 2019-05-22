@@ -8,6 +8,7 @@ import CurrentAlbum from './currentAlbum'
 const newAlbumPersistConfig= {
     key: 'newAlbum',
     storage: storage,
+    blacklist: ['listAlbums'],
     timeout: null
 }
 

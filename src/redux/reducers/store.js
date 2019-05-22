@@ -7,7 +7,7 @@ const rootPersistConfig = {
     key: 'root',
     storage,
     timeout: null,
-    blacklist: ['currentAlbum']
+    blacklist: ['currentAlbum','newAlbum']
 }
 
 const persistedReducer = persistReducer(rootPersistConfig, RootReducer);

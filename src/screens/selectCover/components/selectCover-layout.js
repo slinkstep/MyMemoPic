@@ -16,6 +16,8 @@ import Header from "../../../components/header";
 import ListAlbums from "../../library/components/list-albums"
 
 const SelectCoverLayout = props => {
+
+  
     
   return (
     
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
     height: "60%",
     flexDirection: 'row',
     alignItems: 'center',    
-    backgroundColor: 'gray'
+    
   }
   
 });

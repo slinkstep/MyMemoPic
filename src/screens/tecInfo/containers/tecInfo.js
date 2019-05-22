@@ -7,6 +7,8 @@ import { setTitle, setDate } from '../../../redux/actions/actions';
 
 import {ACTIONS} from '../../../constants/actiontypes'
 
+
+
 class TecInfo extends Component {
 
     componentDidMount(){
@@ -24,6 +26,8 @@ class TecInfo extends Component {
     selectCover = () => {
    
         this.props.navigation.navigate('SelectCover')
+
+
       }
 
 

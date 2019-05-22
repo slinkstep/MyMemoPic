@@ -30,13 +30,14 @@ class Library extends Component {
  
   render() {
     
-    
+    console.log(this.props)
     const layoutProps = {
       nav: this.metodo,
       createAlbum: this.createAlbum,
       title: "Mis álbumes",
       sources: {},
-      keyExtractor: this.keyExtractor
+      keyExtractor: this.keyExtractor,
+      covers: this.props.albums
 
     }
     
@@ -47,6 +48,7 @@ class Library extends Component {
 mapStateToProps = (state) => {
   return {
       title: state.currentAlbum.title,
+      albums: state.newAlbum.listAlbums
    
   }
 }

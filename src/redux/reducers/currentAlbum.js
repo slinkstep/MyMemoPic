@@ -29,11 +29,18 @@ switch (action.type) {
            
     }
 
+    case ACTIONS.SET_ID:
+        return{
+            ...state,
+            id: action.payload.value,
+           
+    }
+
     case ACTIONS.SELECT_COVER:
         return{
             ...state,
             cover: action.payload.value,
-            coverUri: LIST_COVERS[action.payload.value].uri
+            coverUri: LIST_COVERS[action.payload.value].source
            
     }
 

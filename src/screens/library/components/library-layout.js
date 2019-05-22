@@ -15,6 +15,7 @@ import ListAlbums from "./list-albums";
 
 const LibraryLayout = props => {
   
+  console.log(props)
 
   return (
     <View style={styles.container}>
