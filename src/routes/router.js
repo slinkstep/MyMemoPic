@@ -12,6 +12,7 @@ import Album from "../screens/album/containers/album";
 import TecInfo from "../screens/tecInfo/containers/tecInfo";
 import SelectCover from "../screens/selectCover/containers/selectCover";
 import Prueba from "../screens/prueba"
+import SelectPhotos from "../screens/selectPhotos/containers/selectPhotos"
 
 const AppNavigator = createStackNavigator(
   {
@@ -56,7 +57,14 @@ const AppNavigator = createStackNavigator(
       navigationOptions: {
         header: null //this will hide the header
       }
+    },
+    SelectPhotos: {
+      screen: SelectPhotos,
+      navigationOptions: {
+        header: null //this will hide the header
+      }
     }
+
 
   },
   {

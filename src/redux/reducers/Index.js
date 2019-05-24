@@ -15,7 +15,7 @@ const newAlbumPersistConfig= {
 const currentAlbumPersistConfig= {
     key: 'currentAlbum',
     storage: storage,
-    blacklist: ['date','cover','coverUri','title'],
+    blacklist: ['date','cover','coverUri','title','photos','id'],
     timeout: null
 }
 

@@ -10,7 +10,9 @@ import {ACTIONS} from '../../../constants/actiontypes'
 
 class Library extends Component {
 
-  
+  componentDidMount(){
+    
+  }
   
   keyExtractor = (item, index) => {
     return index.toString();
@@ -58,7 +60,8 @@ mapStateToProps = (state) => {
   return {
       title: state.currentAlbum.title,
       albums: state.newAlbum.listAlbums,
-      coverUri: state.currentAlbum.coverUri
+      coverUri: state.currentAlbum.coverUri,
+      photos: state.currentAlbum.photos
    
   }
 }

@@ -1,7 +1,7 @@
 import { ACTIONS } from "../../constants/actiontypes";
 
 const initialState = {
-  listAlbums: []
+  listAlbums: {}
 };
 
 export default (Album = (state = initialState, action) => {

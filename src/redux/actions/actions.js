@@ -49,5 +49,16 @@ export const setNewAlbum = (actionType, value) => {
 }
 
 
+export const setPhotos = (actionType, value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
+
+
 
 
