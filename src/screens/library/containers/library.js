@@ -38,11 +38,16 @@ class Library extends Component {
     return list
   }
 
+  album = (item) => {
+    console.log(item)
+    this.props.navigation.navigate('Album', item)
+  }
  
   render() {
     
     console.log(this.props)
     const layoutProps = {
+      album: this.album,
       nav: this.metodo,
       createAlbum: this.createAlbum,
       title: "Mis álbumes",

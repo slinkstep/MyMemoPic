@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import Header from "../../../components/header";
 import ListAlbums from "./list-albums";
+import ListAlbumsNew from "./list-albums-library"
 
 const LibraryLayout = props => {
   
@@ -28,7 +29,7 @@ const LibraryLayout = props => {
           <Image style={styles.content_row1_icon2} source={sources.icon2} />
         </View>
         <View style={styles.content_row2}>
-          <ListAlbums covers={props.covers} />
+          <ListAlbumsNew nav={props.album} covers={props.covers} />
         </View>
         <View style={styles.content_row3}>
           <View style={styles.content_row3_col1}>

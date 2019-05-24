@@ -1,18 +1,19 @@
 import React from "react";
 import WINDOW from "../../../constants/layout";
 
-
 import {
   View,
   Text,
   Image,
   StyleSheet,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  FlatList
 } from "react-native";
 import Header from "../../../components/header";
 
 const AlbumLayout = props => {
+  keyExtractor = (item, index) => index.toString();
   return (
     <View style={styles.container}>
       <View style={styles.container_header}>
@@ -20,21 +21,46 @@ const AlbumLayout = props => {
       </View>
       <View style={styles.container_content}>
         <View style={styles.container_content_row1}>
-        {props.image &&
-          <Image source={{ uri: props.image }} style={{ width: 300, height: 300 }} resizeMode='contain'/>}
+          <FlatList
+            horizontal
+            keyExtractor={this.keyExtractor}
+            data={props.photos}
+            ListEmptyComponent={<Text style={styles.wrapper}>NO PHOTOS</Text>}
+            renderItem={({ item }) => (
+              <TouchableOpacity>
+                <ImageBackground
+                  resizeMode= 'contain'
+                  style={styles.wrapper}
+                  source={{ uri: item.uri }}
+                />
+              </TouchableOpacity>
+            )}
+          />
         </View>
         <View style={styles.container_content_row2}>
-        <TouchableOpacity>
-          <Image style={styles.container_content_row2_icons} source={require("../../../assets/album/Recurso_75.png")} />
+          <TouchableOpacity>
+            <Image
+              style={styles.container_content_row2_icons}
+              source={require("../../../assets/album/Recurso_75.png")}
+            />
           </TouchableOpacity>
           <TouchableOpacity>
-          <Image style={styles.container_content_row2_icons} source={require("../../../assets/album/Recurso_76.png")} />
+            <Image
+              style={styles.container_content_row2_icons}
+              source={require("../../../assets/album/Recurso_76.png")}
+            />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => props.picker()}>
-          <Image style={styles.container_content_row2_icons} source={require("../../../assets/album/Recurso_77.png")} />
+          <TouchableOpacity onPress={() => {}}>
+            <Image
+              style={styles.container_content_row2_icons}
+              source={require("../../../assets/album/Recurso_77.png")}
+            />
           </TouchableOpacity>
           <TouchableOpacity>
-          <Image style={styles.container_content_row2_icons} source={require("../../../assets/album/Recurso_78.png")} />
+            <Image
+              style={styles.container_content_row2_icons}
+              source={require("../../../assets/album/Recurso_78.png")}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -62,30 +88,37 @@ const styles = StyleSheet.create({
   },
   container_content: {
     width: "100%",
-    height: "85%",
-    
+    height: "85%"
   },
   container_content_row1: {
-   
     alignItems: "center",
-    justifyContent: "center",
-    height: "80%"
-  },
-  container_content_row1_image:{
-    width: "100%",
+    alignContent: "center",
+    justifyContent: 'center',
     height: "80%",
-    resizeMode: 'contain'
+    
+    flexDirection: "row"
   },
+
   container_content_row2: {
- 
     alignItems: "flex-start",
     justifyContent: "space-around",
     height: "20%",
-    flexDirection: 'row'
+    flexDirection: "row"
   },
   container_content_row2_icons: {
     width: 50,
-    height:50
+    height: 50
+  },
+  wrapper: {
+    width: 200,
+    height: 300,
+    borderRadius: 10,
+    marginHorizontal: 10,
+    overflow: "hidden",
+    alignItems: "center",
+    justifyContent: "center",
+    
+    
   }
 });
 

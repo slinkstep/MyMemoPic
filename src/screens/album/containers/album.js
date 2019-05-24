@@ -1,43 +1,23 @@
 import React, { Component } from "react";
 
 import AlbumLayout from "../components/album-layout";
-import { ImagePicker } from "expo";
 import { connect } from 'react-redux';
-import {ImageBrowser,CameraBrowser} from 'expo-multiple-imagepicker';
+
 
 class Album extends Component {
-
-  
-
-    state = {
-        image: null
-      };
-    
-
-    _pickImage = async () => {
-       
-        let result = await ImagePicker.launchImageLibraryAsync({
-          allowsEditing: true
-        });
-      
-        if (!result.cancelled) {
-          this.setState({ image: result.uri });
-        }
-      };
-      
-     
-
+ 
+  nav = () => {
+    this.props.navigation.navigate("Album");
+  }
 
   render() {
-    const layoutprops = {
 
-      title: this.props.title
-        
-    }
+    const layoutProps = this.props.navigation.state.params
 
-    let { image } = this.state;
-
-    return <AlbumLayout image={image} picker={this._pickImage} {...layoutprops}/>;
+    console.log(layoutProps)
+    
+    
+    return <AlbumLayout {...layoutProps} />;
   }
 }
 

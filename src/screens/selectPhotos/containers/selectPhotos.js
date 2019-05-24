@@ -16,14 +16,23 @@ import { ACTIONS } from "../../../constants/actiontypes";
 
 class SelectPhotos extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+          close: null,
+        }
+      }
 
     componentWillUnmount(){
+
+        if(this.state.close == true){
         this.props.setNewAlbum(ACTIONS.SET_NEW_ALBUM, {
             id: this.props.id,
             coverUri: this.props.coverUri,
             title: this.props.title,
             photos: this.props.photos
           });
+        }
       
         console.log(this.props)
     }
@@ -45,6 +54,11 @@ class SelectPhotos extends Component {
         });
 
         this.props.setPhotos(ACTIONS.SET_PHOTOS,list);
+        if(photos.length != 0){
+        this.setState({
+          close: true,
+      })
+    }
         
       })
       .catch(e => console.log(e));
