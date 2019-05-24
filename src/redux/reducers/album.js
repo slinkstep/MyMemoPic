@@ -9,12 +9,13 @@ export default (Album = (state = initialState, action) => {
     case ACTIONS.SET_NEW_ALBUM:
       return {
         ...state,
-        listAlbums: [
+        listAlbums: {
           ...state.listAlbums,
+          [action.payload.value.id]:
           {
             ...action.payload.value
           }
-        ]
+        }
       };
 
     default:

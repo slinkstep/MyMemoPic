@@ -27,6 +27,15 @@ class Library extends Component {
     this.props.navigation.navigate('TecInfo')
   }
 
+  mapAlbums = () => {
+    let list=[]
+    Object.keys(this.props.albums).map(key => {
+      list.push(this.props.albums[key])
+    })
+
+    return list
+  }
+
  
   render() {
     
@@ -37,7 +46,7 @@ class Library extends Component {
       title: "Mis álbumes",
       sources: {},
       keyExtractor: this.keyExtractor,
-      covers: this.props.albums
+      covers: this.mapAlbums()
 
     }
     
@@ -48,7 +57,8 @@ class Library extends Component {
 mapStateToProps = (state) => {
   return {
       title: state.currentAlbum.title,
-      albums: state.newAlbum.listAlbums
+      albums: state.newAlbum.listAlbums,
+      coverUri: state.currentAlbum.coverUri
    
   }
 }

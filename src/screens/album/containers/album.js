@@ -3,8 +3,11 @@ import React, { Component } from "react";
 import AlbumLayout from "../components/album-layout";
 import { ImagePicker } from "expo";
 import { connect } from 'react-redux';
+import {ImageBrowser,CameraBrowser} from 'expo-multiple-imagepicker';
 
 class Album extends Component {
+
+  
 
     state = {
         image: null

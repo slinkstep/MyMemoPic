@@ -15,23 +15,23 @@ class SelectCover extends Component {
 
     this.props.setID(ACTIONS.SET_ID, createUUID())
 
-    this.props.setID(ACTIONS.SET_NEW_ALBUM, {
+    this.props.setNewAlbum(ACTIONS.SET_NEW_ALBUM, {
       id: this.props.id,
       coverUri: this.props.coverUri,
       title: this.props.title,
     } 
     )
 
-    console.log(this.props)
+   
     
-    this.props.navigation.navigate('Album')
+    this.props.navigation.navigate('Prueba')
 
     
   }
   
   render() {
 
-    // console.log(this.props)
+    console.log(this.props)
 
     const layoutProps = {
         keyExtractor: this.keyExtractor,

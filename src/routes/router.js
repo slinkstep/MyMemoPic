@@ -11,6 +11,7 @@ import Info from "../screens/info/containers/info";
 import Album from "../screens/album/containers/album";
 import TecInfo from "../screens/tecInfo/containers/tecInfo";
 import SelectCover from "../screens/selectCover/containers/selectCover";
+import Prueba from "../screens/prueba"
 
 const AppNavigator = createStackNavigator(
   {
@@ -46,6 +47,12 @@ const AppNavigator = createStackNavigator(
     },
     SelectCover: {
       screen: SelectCover,
+      navigationOptions: {
+        header: null //this will hide the header
+      }
+    },
+    Prueba: {
+      screen: Prueba,
       navigationOptions: {
         header: null //this will hide the header
       }
