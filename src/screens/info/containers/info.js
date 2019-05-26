@@ -8,7 +8,8 @@ class Info extends Component {
 
   
   render() {
-    return <InfoLayout></InfoLayout>;
+    return <InfoLayout></InfoLayout>
+  ;
   }
 }
 

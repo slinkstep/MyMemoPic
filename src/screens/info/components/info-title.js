@@ -3,21 +3,11 @@ import WINDOW from "../../../constants/layout";
 
 import { View, Text, Image, StyleSheet, ImageBackground } from "react-native";
 
-import {
- 
-  DotIndicator,
 
-} from 'react-native-indicators';
-
-import InfoTitle from "../components/info-title";
-
-
-const InfoLayout = props => {
+const InfoTitle = props => {
   return (
     <View style={styles.container}>
-      <DotIndicator style={styles.balls} color='gray'></DotIndicator>
       <Text>ESTOY EN INFO</Text>
-      <InfoTitle></InfoTitle>
     </View>
 
   );
