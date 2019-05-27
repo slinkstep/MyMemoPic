@@ -8,12 +8,27 @@ import {
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
-  FlatList
+  FlatList,
+  Button,
 } from "react-native";
 import Header from "../../../components/header";
 
 const AlbumLayout = props => {
   keyExtractor = (item, index) => index.toString();
+const deleteMenuOn = 
+  <View>
+    <Button 
+      onPress={deleteAlbum}
+      title='Borrar'/>
+    <Button 
+      onPress={menuDeleteOff}
+      title='Cancelar'/>
+  </View>; 
+
+const deleteMenuOff = 
+ <View>
+ </View>; 
+  
   return (
     <View style={styles.container}>
       <View style={styles.container_header}>
@@ -38,6 +53,7 @@ const AlbumLayout = props => {
           />
         </View>
         <View style={styles.container_content_row2}>
+          {props.deleteStatus? deleteMenuOn : deleteMenuOff} 
           <TouchableOpacity>
             <Image
               style={styles.container_content_row2_icons}
