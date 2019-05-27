@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import SelectCoverLayout  from "../components/selectCover-layout";
 
 import { connect } from 'react-redux';
+import { Alert, Platform } from "react-native";
+import { ImagePicker, Permissions, Linking } from "expo";
 
 import { setSelectedCover, setID, setNewAlbum } from '../../../redux/actions/actions';
 
@@ -9,15 +11,55 @@ import createUUID from "../../../utils/UUID";
 
 import {ACTIONS} from "../../../constants/actiontypes"
 
+import {CAMERA_PERMISSIONS} from '../../../constants/constants'
+
 class SelectCover extends Component {
 
-  library = () => {
+
+  enablePermissions = () => {
+    Alert.alert(
+      CAMERA_PERMISSIONS.TITLE,
+      CAMERA_PERMISSIONS.MESSAGE,
+      [
+        {
+          text: CAMERA_PERMISSIONS.CANCEL_BUTTON,
+          onPress: () => {},
+          style: "cancel"
+        },
+        {
+          text: CAMERA_PERMISSIONS.ALLOW_BUTTON,
+          onPress: () =>
+            Platform.OS === "android"
+              ? this.getCameraPermissions()
+              : Linking.openURL("app-settings:")
+        }
+      ],
+      { cancelable: false }
+    );
+  };
+
+
+  getCameraPermissions = async () => {
+    const camera = await Permissions.askAsync(Permissions.CAMERA);
+    const cameraRoll = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    return camera.status === "granted" && cameraRoll.status === "granted";
+  };
+
+  library = async () => {
+
+
+    const status = await this.getCameraPermissions();
+    if (status) {
+      this.props.navigation.navigate('SelectPhotos')
+    } else {
+      this.enablePermissions();
+    }
 
     this.props.setID(ACTIONS.SET_ID, createUUID())
 
 
     
-    this.props.navigation.navigate('SelectPhotos')
+    
 
     
   }

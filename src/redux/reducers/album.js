@@ -18,6 +18,8 @@ export default (Album = (state = initialState, action) => {
         }
       };
 
+      
+
     default:
       return state;
   }

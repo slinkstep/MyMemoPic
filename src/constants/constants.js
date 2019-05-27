@@ -9,3 +9,10 @@ export const LIST_COVERS = [
     {id:7,source:require("../assets/selectCover/portada8.png"),coverUri:"../assets/selectCover/portada8.png"},
 
 ]
+
+export const CAMERA_PERMISSIONS = {
+    TITLE: 'Permisos deshabilitados',
+    MESSAGE: 'Debe habilitar los permisos de acceso a la cámara y a la galería del teléfono',
+    CANCEL_BUTTON: 'Cancelar',
+    ALLOW_BUTTON: 'Habilitar'
+}

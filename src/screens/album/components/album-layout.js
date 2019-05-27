@@ -20,7 +20,7 @@ const AlbumLayout = props => {
         <Header {...props} source={sources} />
       </View>
       <View style={styles.container_content}>
-        <View style={styles.container_content_row1}>
+        <View style={styles.container_content_images}>
           <FlatList
             horizontal
             keyExtractor={this.keyExtractor}
@@ -29,7 +29,7 @@ const AlbumLayout = props => {
             renderItem={({ item }) => (
               <TouchableOpacity>
                 <ImageBackground
-                  resizeMode= 'contain'
+                  resizeMode="contain"
                   style={styles.wrapper}
                   source={{ uri: item.uri }}
                 />
@@ -37,7 +37,8 @@ const AlbumLayout = props => {
             )}
           />
         </View>
-        <View style={styles.container_content_row2}>
+
+        <View style={styles.container_content_icons}>
           <TouchableOpacity>
             <Image
               style={styles.container_content_row2_icons}
@@ -90,16 +91,15 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "85%"
   },
-  container_content_row1: {
+  container_content_images: {
     alignItems: "center",
-    alignContent: "center",
-    justifyContent: 'center',
+    alignContent: 'center',
+    justifyContent: "center",
     height: "80%",
-    
-    flexDirection: "row"
+    flexDirection: 'row'
   },
 
-  container_content_row2: {
+  container_content_icons: {
     alignItems: "flex-start",
     justifyContent: "space-around",
     height: "20%",
@@ -116,9 +116,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     overflow: "hidden",
     alignItems: "center",
-    justifyContent: "center",
-    
-    
+    justifyContent: "center"
   }
 });
 

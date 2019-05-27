@@ -59,6 +59,3 @@ export const setPhotos = (actionType, value) => {
 }
 
 
-
-
-
