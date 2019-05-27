@@ -3,7 +3,7 @@ import SelectCoverLayout  from "../components/selectCover-layout";
 
 import { connect } from 'react-redux';
 import { Alert, Platform } from "react-native";
-import { ImagePicker, Permissions, Linking } from "expo";
+import { Permissions, Linking } from "expo";
 
 import { setSelectedCover, setID, setNewAlbum } from '../../../redux/actions/actions';
 

@@ -10,6 +10,10 @@ class Album extends Component {
     this.props.navigation.navigate("Album");
   }
 
+  navigateToTecInfo = (route,item) => {
+    this.props.navigation.navigate(route,item);
+  }
+
   render() {
 
     const layoutProps = this.props.navigation.state.params
@@ -17,7 +21,7 @@ class Album extends Component {
     console.log(layoutProps)
     
     
-    return <AlbumLayout {...layoutProps} />;
+    return <AlbumLayout navigateToTecInfo= {this.navigateToTecInfo} {...layoutProps} />;
   }
 }
 

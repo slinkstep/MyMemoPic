@@ -13,20 +13,25 @@ class TecInfo extends Component {
 
     componentDidMount(){
         
+    
         var date = new Date().getDate(); //Current Date
         var month = new Date().getMonth() + 1; //Current Month
         var year = new Date().getFullYear(); //Current Year
         this.props.setDate(ACTIONS.SET_DATE,`${date}/${month}/${year}`)
+        
     }
  
     componentWillMount(){
+        
+        
         this.props.saveTitle(ACTIONS.SET_TITLE,"")
+        
     }
 
     selectCover = () => {
-   
+        
         this.props.navigation.navigate('SelectCover')
-
+        
 
       }
 

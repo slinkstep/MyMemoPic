@@ -37,9 +37,9 @@ const AlbumLayout = props => {
             )}
           />
         </View>
-
+       
         <View style={styles.container_content_icons}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => props.navigateToTecInfo('ViewTecInfo', props)}>
             <Image
               style={styles.container_content_row2_icons}
               source={require("../../../assets/album/Recurso_75.png")}
