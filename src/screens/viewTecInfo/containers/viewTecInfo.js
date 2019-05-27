@@ -6,29 +6,22 @@ import ViewTecInfoLayout from "../components/viewTecInfo-layout";
 
 class ViewTecInfo extends Component {
 
-    componentDidMount(){
-        
-        const layoutProps = this.props.navigation.state.params
+    constructor(props) {
+        super(props);
+        this.state = {
+          layoutProps: this.props.navigation.state.params
+        }
+      }
 
-        console.log(layoutProps)
-        
-    }
+    
  
-    componentWillMount(){
-        
-        
-     
-    }
-
 
 
   render() {
     
-    const layoutProps = {
-        
-    }
+    
 
-    return <ViewTecInfoLayout></ViewTecInfoLayout>
+    return <ViewTecInfoLayout {...this.state.layoutProps}></ViewTecInfoLayout>
   }
 }
 

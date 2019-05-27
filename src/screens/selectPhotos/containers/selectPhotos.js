@@ -30,7 +30,9 @@ class SelectPhotos extends Component {
             id: this.props.id,
             coverUri: this.props.coverUri,
             title: this.props.title,
-            photos: this.props.photos
+            photos: this.props.photos,
+            date: this.props.date,
+            numPhotos: this.props.numPhotos
           });
         }
       
@@ -79,7 +81,9 @@ mapStateToProps = state => {
     title: state.currentAlbum.title,
     id: state.currentAlbum.id,
     photos: state.currentAlbum.photos,
-    albums: state.newAlbum.listAlbums
+    date: state.currentAlbum.date,
+    albums: state.newAlbum.listAlbums,
+    numPhotos: state.currentAlbum.numPhotos
   };
 };
 

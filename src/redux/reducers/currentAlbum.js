@@ -9,7 +9,7 @@ const initialState = {
   photos: [],
   date: null,
   lastedited: null,
-  numPhotos: "0"
+  numPhotos: 0
 };
 
 export default (CurrentAlbum = (state = initialState, action) => {
@@ -42,7 +42,8 @@ export default (CurrentAlbum = (state = initialState, action) => {
     case ACTIONS.SET_PHOTOS:
       return {
         ...state,
-        photos: action.payload.value
+        photos: action.payload.value,
+        numPhotos: action.payload.value.length
       };
 
     default:

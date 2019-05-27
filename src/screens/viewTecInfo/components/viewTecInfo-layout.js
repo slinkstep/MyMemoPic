@@ -1,31 +1,26 @@
 import React from "react";
 import WINDOW from "../../../constants/layout";
 
-import { ACTIONS } from "../../../constants/actiontypes";
-
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-
-} from "react-native";
 
 
+import { View, Text, Image, StyleSheet } from "react-native";
 
 const ViewTecInfoLayout = props => {
+    console.log(props)
   return (
+      
     <View style={styles.container}>
-      <View style={styles.container_content}>
-        <View style={styles.container_content_image}>
-          <Image
-            style={styles.container_content_imagebook}
-            source={require("../../../assets/tecInfo/Recurso_93.png")}
-          />
-        </View>
+      <View style={styles.title}>
+        <Text style={styles.title_text}>{props.title}</Text>
+      </View>
 
+      <View style={styles.image_container}>
+        <Image style={styles.image} source={props.coverUri} />
+      </View>
+
+      <View style={styles.container_content}>
         <Text style={styles.container_content_titles}>
-          Fecha de creación: {props.date || `none`}
+          Fecha de creación: {props.title || `none`}
         </Text>
         <Text style={styles.container_content_titles}>
           Fecha de creación: {props.date || `none`}
@@ -41,7 +36,6 @@ const ViewTecInfoLayout = props => {
   );
 };
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,40 +44,42 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
-  container_header: {
+  title: {
     width: "100%",
-    height: "15%"
+    height: "10%",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  title_text: {
+    fontWeight: "bold",
+    color: "#E8703B",
+    fontSize: 32,
+    fontFamily: "sans-serif-medium"
+  },
+  image_container: {
+    width: "100%",
+    height: "50%",
+
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  image: {
+    resizeMode: "contain",
+    width: "80%",
+    height: "80%"
   },
   container_content: {
     width: "100%",
-    height: "85%"
+    flex: 1,
+    justifyContent: "center"
   },
-  container_content_image: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1
-  },
-  container_content_imagebook: {
-    resizeMode: "contain"
-  },
-  container_content_text: {},
+
   container_content_titles: {
     fontWeight: "bold",
     fontFamily: "sans-serif-medium",
     paddingVertical: 15,
     paddingHorizontal: 20
-  },
-  container_content_input: {
-    flexDirection: "row",
-    alignItems: "center"
-  },
-  container_content_inputBox: {
-    height: "60%",
-    width: "50%",
-    borderColor: "black",
-    borderWidth: 1,
-    borderRadius: 10,
-    paddingHorizontal: 5
   }
 });
 
