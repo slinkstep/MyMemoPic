@@ -18,6 +18,9 @@ export default (Album = (state = initialState, action) => {
         }
       };
 
+    case ACTIONS.DELETE_ALBUM:
+      return state.filter(({ id }) => id !== action.id); 
+
     default:
       return state;
   }

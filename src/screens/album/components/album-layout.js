@@ -15,20 +15,25 @@ import Header from "../../../components/header";
 
 const AlbumLayout = props => {
   keyExtractor = (item, index) => index.toString();
+
+  let menuDeleteHandler = () =>{
+    props.menuDeleteOn;
+  }
 const deleteMenuOn = 
   <View>
     <Button 
-      onPress={deleteAlbum}
+      // onPress={}
       title='Borrar'/>
     <Button 
-      onPress={menuDeleteOff}
+      // onPress={menuDeleteOff}
       title='Cancelar'/>
   </View>; 
 
 const deleteMenuOff = 
  <View>
  </View>; 
-  
+console.warn(props);
+console.warn(menuDeleteOn);
   return (
     <View style={styles.container}>
       <View style={styles.container_header}>
@@ -72,7 +77,9 @@ const deleteMenuOff =
               source={require("../../../assets/album/Recurso_77.png")}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            // onPress={menuDeleteOn}
+            > 
             <Image
               style={styles.container_content_row2_icons}
               source={require("../../../assets/album/Recurso_78.png")}

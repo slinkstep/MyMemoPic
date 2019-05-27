@@ -58,6 +58,15 @@ export const setPhotos = (actionType, value) => {
     }
 }
 
+export const deleteAlbum = (actionType,value) => { 
+    return {
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
 
 
 
