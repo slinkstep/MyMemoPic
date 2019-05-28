@@ -14,6 +14,7 @@ import Header from "../../../components/header";
 
 const AlbumLayout = props => {
   keyExtractor = (item, index) => index.toString();
+
   return (
     <View style={styles.container}>
       <View style={styles.container_header}>
@@ -27,7 +28,10 @@ const AlbumLayout = props => {
             data={props.photos}
             ListEmptyComponent={<Text style={styles.wrapper}>NO PHOTOS</Text>}
             renderItem={({ item }) => (
-              <TouchableOpacity>
+              <TouchableOpacity
+              
+              onLongPress={() => props.deletePhoto(props, item) }
+              >
                 <ImageBackground
                   resizeMode="contain"
                   style={styles.wrapper}

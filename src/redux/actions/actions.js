@@ -67,5 +67,14 @@ export const deleteAlbum = (actionType, value) => {
     }
 }
 
+export const updatePhotos = (actionType,value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
 
 
