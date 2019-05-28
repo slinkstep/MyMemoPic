@@ -18,6 +18,16 @@ export default (Album = (state = initialState, action) => {
         }
       };
 
+    case ACTIONS.DELETE_ALBUM:
+      return {
+        ...state,
+        listAlbums: {
+          ...action.payload.value
+        }
+      }
+      
+
+
       
 
     default:

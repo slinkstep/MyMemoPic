@@ -26,7 +26,7 @@ export default class App extends Component {
       3000
     );
 
-    persistor.purge()
+   
 
       
    

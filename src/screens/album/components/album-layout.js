@@ -57,7 +57,8 @@ const AlbumLayout = props => {
               source={require("../../../assets/album/Recurso_77.png")}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => {props.delete(props)}}>
             <Image
               style={styles.container_content_row2_icons}
               source={require("../../../assets/album/Recurso_78.png")}
