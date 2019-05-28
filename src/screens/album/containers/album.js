@@ -91,7 +91,7 @@ class Album extends Component {
   };
 
   edit = (item) => {
-    console.log(item)
+ 
     this.props.navigation.navigate("Edit", this.props.albums[item.id]);
   }
 

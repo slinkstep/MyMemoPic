@@ -36,7 +36,7 @@ class SelectPhotos extends Component {
           });
         }
       
-        console.log(this.props)
+     
     }
 
 

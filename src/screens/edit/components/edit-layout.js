@@ -15,7 +15,9 @@ const EditLayout = props => {
       </View>
 
       <View style={styles.container_content}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+        onPress={() => {props.add()}}
+        style={styles.button}>
           <Text style={styles.text}>Agregar Fotos</Text>
         </TouchableOpacity>
 

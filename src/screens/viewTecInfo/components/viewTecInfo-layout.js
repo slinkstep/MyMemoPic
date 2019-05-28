@@ -6,7 +6,7 @@ import WINDOW from "../../../constants/layout";
 import { View, Text, Image, StyleSheet } from "react-native";
 
 const ViewTecInfoLayout = props => {
-    console.log(props)
+   
   return (
       
     <View style={styles.container}>

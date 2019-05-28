@@ -15,14 +15,16 @@ class Edit extends Component {
       }
 
     
- 
+    addPhotos = () => {
+        this.props.navigation.navigate("UpdatePhotos", this.state.layoutProps);
+    }
 
 
   render() {
     
     
 
-    return <EditLayout {...this.state.layoutProps}/>
+    return <EditLayout add={this.addPhotos} {...this.state.layoutProps}/>
   }
 }
 
