@@ -20,11 +20,11 @@ const HomeLayout = props => {
       </View>
       <View style={styles.row2}>
         <Image 
-        source={require("../../../assets/home/Recurso_59.png")} 
+        source={require("../../../assets/home/welcome.png")} 
         style={styles.row2title}
         />
         <Image 
-        source={require("../../../assets/home/Recurso_55.png")} 
+        source={require("../../../assets/home/prueba2.png")} 
         style={styles.row2image2}
         />
         <TouchableOpacity
