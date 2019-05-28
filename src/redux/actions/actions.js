@@ -76,5 +76,24 @@ export const updatePhotos = (actionType,value) => {
     }
 }
 
+export const setNumPhotos = (actionType,value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
+export const setCover = (actionType,value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
+
 
 

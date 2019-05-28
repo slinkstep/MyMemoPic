@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Alert, Platform } from "react-native";
 import { Permissions, Linking } from "expo";
 
-import { setSelectedCover, setID, setNewAlbum } from '../../../redux/actions/actions';
+import { setSelectedCover, setID, setNewAlbum, setCover } from '../../../redux/actions/actions';
 
 import createUUID from "../../../utils/UUID";
 
@@ -15,6 +15,14 @@ import {CAMERA_PERMISSIONS} from '../../../constants/constants'
 
 class SelectCover extends Component {
 
+  componentWillMount(){
+        
+        
+    this.props.setCover(ACTIONS.SET_COVER,0)
+    
+    
+    
+}
 
   enablePermissions = () => {
     Alert.alert(
@@ -98,6 +106,7 @@ mapStateToProps = (state) => {
         selectCover: (actionType, value) => dispatch(setSelectedCover(actionType, value)),
         setID: (actionType, value) => dispatch(setID(actionType, value)),
         setNewAlbum: (actionType, value) => dispatch(setNewAlbum(actionType, value)),
+        setCover: (actionType, value) => dispatch(setCover(actionType, value))
 
     }
   }
