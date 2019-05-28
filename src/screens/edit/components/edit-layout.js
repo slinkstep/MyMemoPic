@@ -1,14 +1,10 @@
 import React from "react";
 import WINDOW from "../../../constants/layout";
 
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
-
-import { View, Text, Image, StyleSheet } from "react-native";
-
-const ViewTecInfoLayout = props => {
-    console.log(props)
+const EditLayout = props => {
   return (
-      
     <View style={styles.container}>
       <View style={styles.title}>
         <Text style={styles.title_text}>{props.title}</Text>
@@ -19,18 +15,13 @@ const ViewTecInfoLayout = props => {
       </View>
 
       <View style={styles.container_content}>
-        <Text style={styles.container_content_titles}>
-          Título: {props.title || `none`}
-        </Text>
-        <Text style={styles.container_content_titles}>
-          Fecha de creación: {props.date || `none`}
-        </Text>
-        <Text style={styles.container_content_titles}>
-          Número de fotos: {props.numPhotos || `none`}
-        </Text>
-        <Text style={styles.container_content_titles}>
-          Editado por última vez: {props.date || `none`}
-        </Text>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>Agregar Fotos</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>Editar Portada</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -59,28 +50,36 @@ const styles = StyleSheet.create({
   },
   image_container: {
     width: "100%",
-    height: "50%",
+    height: "60%",
 
     justifyContent: "center",
     alignItems: "center"
   },
   image: {
     resizeMode: "contain",
-    width: "80%",
-    height: "80%"
+    width: "90%",
+    height: "90%"
   },
   container_content: {
     width: "100%",
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "space-around",
+    alignItems: "center"
   },
 
-  container_content_titles: {
-    fontWeight: "bold",
+  text: {
     fontFamily: "sans-serif-medium",
-    paddingVertical: 15,
-    paddingHorizontal: 20
+    fontSize: 20,
+    color: "white"
+  },
+  button: {
+    backgroundColor: "#E8703B",
+    width: 180,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10
   }
 });
 
-export default ViewTecInfoLayout;
+export default EditLayout;

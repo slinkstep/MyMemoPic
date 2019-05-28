@@ -14,6 +14,7 @@ import SelectCover from "../screens/selectCover/containers/selectCover";
 import Prueba from "../screens/prueba"
 import SelectPhotos from "../screens/selectPhotos/containers/selectPhotos"
 import ViewTecInfo from "../screens/viewTecInfo/containers/viewTecInfo"
+import Edit from "../screens/edit/containers/edit"
 
 const AppNavigator = createStackNavigator(
   {
@@ -70,7 +71,14 @@ const AppNavigator = createStackNavigator(
       navigationOptions: {
         header: null //this will hide the header
       }
+    },
+    Edit: {
+      screen: Edit,
+      navigationOptions: {
+        header: null //this will hide the header
+      }
     }
+
 
 
   },

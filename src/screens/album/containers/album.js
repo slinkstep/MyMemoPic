@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import AlbumLayout from "../components/album-layout";
 import { connect } from "react-redux";
-import { Alert, Platform } from "react-native";
+import { Alert} from "react-native";
 import { deleteAlbum, updatePhotos } from "../../../redux/actions/actions";
 import { ACTIONS } from "../../../constants/actiontypes";
 
@@ -90,12 +90,18 @@ class Album extends Component {
     );
   };
 
+  edit = (item) => {
+    console.log(item)
+    this.props.navigation.navigate("Edit", this.props.albums[item.id]);
+  }
+
   render() {
-    console.log(this.state);
+    
 
     return (
       <AlbumLayout
         delete={this.delete}
+        edit={this.edit}
         navigateToTecInfo={this.navigateToTecInfo}
         deletePhoto={this.deletePhoto}
         {...this.state.layoutProps}
@@ -113,10 +119,8 @@ mapStateToProps = state => {
 
 mapDispatchToProps = dispatch => {
   return {
-    deleteAlbum: (actionType, value) =>
-      dispatch(deleteAlbum(actionType, value)),
-    updatePhotos: (actionType, value) =>
-      dispatch(updatePhotos(actionType, value))
+    deleteAlbum: (actionType, value) => dispatch(deleteAlbum(actionType, value)),
+    updatePhotos: (actionType, value) => dispatch(updatePhotos(actionType, value))
   };
 };
 
