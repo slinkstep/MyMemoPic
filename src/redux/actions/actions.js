@@ -58,4 +58,42 @@ export const setPhotos = (actionType, value) => {
     }
 }
 
+export const deleteAlbum = (actionType, value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
+export const updatePhotos = (actionType,value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
+export const setNumPhotos = (actionType,value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
+export const setCover = (actionType,value) => {
+    return{
+        type: actionType,
+        payload:{
+            value
+        }
+    }
+}
+
+
+
 

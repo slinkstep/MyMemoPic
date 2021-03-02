@@ -14,10 +14,11 @@ import Header from "../../../components/header";
 
 const AlbumLayout = props => {
   keyExtractor = (item, index) => index.toString();
+
   return (
     <View style={styles.container}>
       <View style={styles.container_header}>
-        <Header {...props} source={sources} />
+        <Header {...props} navLogo2={()=>{}} source={sources} />
       </View>
       <View style={styles.container_content}>
         <View style={styles.container_content_images}>
@@ -27,7 +28,10 @@ const AlbumLayout = props => {
             data={props.photos}
             ListEmptyComponent={<Text style={styles.wrapper}>NO PHOTOS</Text>}
             renderItem={({ item }) => (
-              <TouchableOpacity>
+              <TouchableOpacity
+              
+              onLongPress={() => props.deletePhoto(props, item) }
+              >
                 <ImageBackground
                   resizeMode="contain"
                   style={styles.wrapper}
@@ -51,13 +55,14 @@ const AlbumLayout = props => {
               source={require("../../../assets/album/Recurso_76.png")}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => {props.edit(props)}}>
             <Image
               style={styles.container_content_row2_icons}
               source={require("../../../assets/album/Recurso_77.png")}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => {props.delete(props)}}>
             <Image
               style={styles.container_content_row2_icons}
               source={require("../../../assets/album/Recurso_78.png")}

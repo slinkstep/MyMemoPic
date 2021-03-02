@@ -18,7 +18,7 @@ const Header = props => {
             <Image source={props.source.logo2} style={styles.logo} />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => props.navLogo2()}>
+          <TouchableOpacity onPress={() => props.navLogo2() || {}}>
             <Image source={props.source.logo3} style={styles.logo} />
           </TouchableOpacity>
         </View>

@@ -3,7 +3,7 @@ import TecInfoLayout from "../components/tecInfo-layout";
 
 import { connect } from 'react-redux';
 
-import { setTitle, setDate } from '../../../redux/actions/actions';
+import { setTitle, setDate,setNumPhotos } from '../../../redux/actions/actions';
 
 import {ACTIONS} from '../../../constants/actiontypes'
 
@@ -21,10 +21,12 @@ class TecInfo extends Component {
         
     }
  
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
         
         
         this.props.saveTitle(ACTIONS.SET_TITLE,"")
+        this.props.setNumPhotos(ACTIONS.SET_NUM_PHOTOS,"")
+        
         
     }
 
@@ -62,6 +64,7 @@ mapDispatchToProps = (dispatch) => {
     return {
         saveTitle: (actionType, value) => dispatch(setTitle(actionType, value)),
         setDate: (actionType, value) => dispatch(setDate(actionType, value)),
+        setNumPhotos: (actionType, value) => dispatch(setNumPhotos(actionType, value)),
     }
 }
 

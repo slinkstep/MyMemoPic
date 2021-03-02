@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView,Image} from 'react-native';
-import {ImageBrowser,CameraBrowser} from 'expo-multiple-imagepicker';
+import {ImageBrowser} from 'expo-image-picker-multiple';
 
 export default class TestApp extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class TestApp extends React.Component {
   }
   imageBrowserCallback = (callback) => {
     callback.then((photos) => {
-      console.log(photos)
+    
       this.setState({
         imageBrowserOpen: false,
         photos
@@ -32,7 +32,7 @@ export default class TestApp extends React.Component {
   }
 
   render() {
-    console.log(this.state.photos)
+    
     if (this.state.imageBrowserOpen) {
       return(<ImageBrowser max={40} callback={this.imageBrowserCallback}/>);
     }

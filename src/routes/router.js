@@ -1,9 +1,11 @@
 import {
   createAppContainer,
-  createStackNavigator,
+  // createStackNavigator,
   createSwitchNavigator,
   createBottomTabNavigator
 } from "react-navigation";
+
+import { createStackNavigator } from 'react-navigation-stack'
 
 import Home from "../screens/home/containers/home";
 import Library from "../screens/library/containers/library";
@@ -14,6 +16,8 @@ import SelectCover from "../screens/selectCover/containers/selectCover";
 import Prueba from "../screens/prueba"
 import SelectPhotos from "../screens/selectPhotos/containers/selectPhotos"
 import ViewTecInfo from "../screens/viewTecInfo/containers/viewTecInfo"
+import Edit from "../screens/edit/containers/edit"
+import UpdatePhotos from "../screens/updathePhotos/containers/updatePhotos"
 
 const AppNavigator = createStackNavigator(
   {
@@ -70,7 +74,20 @@ const AppNavigator = createStackNavigator(
       navigationOptions: {
         header: null //this will hide the header
       }
+    },
+    Edit: {
+      screen: Edit,
+      navigationOptions: {
+        header: null //this will hide the header
+      }
+    },
+    UpdatePhotos: {
+      screen: UpdatePhotos,
+      navigationOptions: {
+        header: null //this will hide the header
+      }
     }
+
 
 
   },

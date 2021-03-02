@@ -46,6 +46,18 @@ export default (CurrentAlbum = (state = initialState, action) => {
         numPhotos: action.payload.value.length
       };
 
+    case ACTIONS.SET_NUM_PHOTOS:
+      return {
+        ...state,
+        numPhotos: action.payload.value
+      };
+
+    case ACTIONS.SET_COVER:
+      return {
+        ...state,
+        cover: action.payload.value
+      };
+
     default:
       return state;
   }

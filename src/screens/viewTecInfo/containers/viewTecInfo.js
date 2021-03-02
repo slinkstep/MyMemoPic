@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import ViewTecInfoLayout from "../components/viewTecInfo-layout";
-
+import { connect } from 'react-redux';
 
 
 class ViewTecInfo extends Component {
@@ -9,7 +9,7 @@ class ViewTecInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          layoutProps: this.props.navigation.state.params
+          layoutProps: this.props.albums[props.navigation.state.params.id]
         }
       }
 
@@ -26,4 +26,14 @@ class ViewTecInfo extends Component {
 }
 
 
-export default ViewTecInfo;
+mapStateToProps = (state) => {
+  return {
+     
+      albums: state.newAlbum.listAlbums,
+  
+   
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (ViewTecInfo);

@@ -20,7 +20,7 @@ const TecInfoLayout = props => {
     
     <View style={styles.container}>
       <View style={styles.container_header}>
-        <Header {...props} source={sources} />
+        <Header {...props} nav={() => {}} source={sources} />
       </View>
       
       <View style={styles.container_content}>
