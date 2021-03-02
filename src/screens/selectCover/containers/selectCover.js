@@ -18,39 +18,39 @@ class SelectCover extends Component {
 		this.props.setCover(ACTIONS.SET_COVER, 0);
 	}
 
-	// enablePermissions = () => {
-	// 	Alert.alert(
-	// 		CAMERA_PERMISSIONS.TITLE,
-	// 		CAMERA_PERMISSIONS.MESSAGE,
-	// 		[
-	// 			{
-	// 				text: CAMERA_PERMISSIONS.CANCEL_BUTTON,
-	// 				onPress: () => {},
-	// 				style: 'cancel'
-	// 			},
-	// 			{
-	// 				text: CAMERA_PERMISSIONS.ALLOW_BUTTON,
-	// 				onPress: () =>
-	// 					Platform.OS === 'android' ? this.getCameraPermissions() : Linking.openURL('app-settings:')
-	// 			}
-	// 		],
-	// 		{ cancelable: false }
-	// 	);
-	// };
+	enablePermissions = () => {
+		Alert.alert(
+			CAMERA_PERMISSIONS.TITLE,
+			CAMERA_PERMISSIONS.MESSAGE,
+			[
+				{
+					text: CAMERA_PERMISSIONS.CANCEL_BUTTON,
+					onPress: () => {},
+					style: 'cancel'
+				},
+				{
+					text: CAMERA_PERMISSIONS.ALLOW_BUTTON,
+					onPress: () =>
+						Platform.OS === 'android' ? this.getCameraPermissions() : Linking.openURL('app-settings:')
+				}
+			],
+			{ cancelable: false }
+		);
+	};
 
-	// getCameraPermissions = async () => {
-	// 	const camera = await Permissions.askAsync(Permissions.CAMERA);
-	// 	const cameraRoll = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-	// 	return camera.status === 'granted' && cameraRoll.status === 'granted';
-	// };
+	getCameraPermissions = async () => {
+		const camera = await Permissions.askAsync(Permissions.CAMERA);
+		const cameraRoll = await Permissions.askAsync(Permissions.MEDIA_LIBRARY);
+		return camera.status === 'granted' && cameraRoll.status === 'granted';
+	};
 
 	library = async () => {
-		// const status = await this.getCameraPermissions();
-		// if (status) {
-		// 	this.props.navigation.navigate('SelectPhotos');
-		// } else {
-		// 	this.enablePermissions();
-		// }
+		const status = await this.getCameraPermissions();
+		if (status) {
+			this.props.navigation.navigate('SelectPhotos');
+		} else {
+			this.enablePermissions();
+		}
 
 		this.props.setID(ACTIONS.SET_ID, createUUID());
 		this.props.navigation.navigate('SelectPhotos');

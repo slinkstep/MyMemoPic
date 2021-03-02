@@ -9,7 +9,8 @@ import {
   Image,
   StyleSheet,
   TextInput,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  ImageBackground,
 } from "react-native";
 
 import Header from "../../../components/header";
@@ -17,15 +18,18 @@ import ListAlbums from "../../library/components/list-albums"
 
 const SelectCoverLayout = props => {
 
-  
-    
   return (
     
     <View style={styles.container}>
       <View style={styles.container_header}>
         <Header {...props} source={sources} />
       </View>
-      
+      <View style = {styles.container_cover}>
+        <View style = {[styles.cover,props.coverUri != null ?  styles.background_cover_false : styles.background_cover_true]}>
+          <ImageBackground source={props.coverUri} style={{width: '100%', height: '100%'}}>
+          </ImageBackground>
+        </View>
+      </View>
       <View style={styles.container_content}>
        
         <ListAlbums selected={props.selected} onPress={props.onPress} covers={LIST_COVERS}></ListAlbums>
@@ -54,6 +58,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: "100%",
     height: "100%",
+    backgroundColor:'#BEE0E8',
   },
   container_header: {
     width: "100%",
@@ -61,11 +66,31 @@ const styles = StyleSheet.create({
   },
   container_content: {
     width: "100%",
-    height: "60%",
+    height: "25%",
     flexDirection: 'row',
     alignItems: 'center',    
+    backgroundColor:'gray',
     
-  }
+  },
+  container_cover: {
+    width: "100%",
+    height: "60%",
+    flexDirection : 'row', 
+    alignItems: 'center',
+    justifyContent: "center",
+  },
+  cover : {
+    width:'45%',
+    height:'60%',
+    borderRadius: 10,
+  },
+  background_cover_true : {
+    backgroundColor:'#FFCA21',
+    borderWidth: 3,
+  },
+  background_cover_false : {
+  }, 
+
   
 });
 
