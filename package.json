@@ -7,11 +7,14 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "expo": "^32.0.0",
+    "@react-native-community/cameraroll": "^4.0.2",
+    "expo": "^40.0.0",
+    "expo-constants": "~9.3.3",
     "expo-multiple-imagepicker": "^1.0.6",
+    "expo-permissions": "~10.0.0",
     "native-base": "^2.12.1",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-indicator": "^0.7.0",
     "react-native-indicators": "^0.13.0",
     "react-navigation": "^3.9.1",
@@ -20,7 +23,8 @@
     "redux-persist": "5.10.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "8.3.0",
+    "react-native-gesture-handler": "^1.10.3"
   },
   "private": true
 }

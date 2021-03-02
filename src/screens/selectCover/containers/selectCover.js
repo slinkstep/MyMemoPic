@@ -3,8 +3,8 @@ import SelectCoverLayout  from "../components/selectCover-layout";
 
 import { connect } from 'react-redux';
 import { Alert, Platform } from "react-native";
-import { Permissions, Linking } from "expo";
-
+import {  Linking } from "expo";
+import * as Permissions from 'expo-permissions'
 import { setSelectedCover, setID, setNewAlbum, setCover } from '../../../redux/actions/actions';
 
 import createUUID from "../../../utils/UUID";
