@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { ImageBrowser } from "expo-multiple-imagepicker";
+import { ImageBrowser } from "expo-image-picker-multiple";
 
 import {
   setSelectedCover,

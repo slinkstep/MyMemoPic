@@ -1,9 +1,11 @@
 import {
   createAppContainer,
-  createStackNavigator,
+  // createStackNavigator,
   createSwitchNavigator,
   createBottomTabNavigator
 } from "react-navigation";
+
+import { createStackNavigator } from 'react-navigation-stack'
 
 import Home from "../screens/home/containers/home";
 import Library from "../screens/library/containers/library";

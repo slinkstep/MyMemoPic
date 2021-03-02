@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView,Image} from 'react-native';
-import {ImageBrowser,CameraBrowser} from 'expo-multiple-imagepicker';
+import {ImageBrowser} from 'expo-image-picker-multiple';
 
 export default class TestApp extends React.Component {
   constructor(props) {
