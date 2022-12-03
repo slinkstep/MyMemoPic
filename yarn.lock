@@ -3260,9 +3260,9 @@ decamelize@^1.2.0:
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^2.0.3:
   version "2.0.5"
@@ -3630,6 +3630,11 @@ expo-media-library@^9.2.1:
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-9.2.1.tgz#11583e40087d77cf16e70bb7db0048d2bd1938b5"
   integrity sha512-A9AAGI1200P0oULoXA7U7wQ91zgPWl9GWo5H9EQvVDHp1ABX8tf2qTOad6Y0KotHYWVMIyfsVXzVYAbjJ9LxPQ==
+
+expo-permissions@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-11.0.0.tgz#10889073121fea42bbfc35f09a35fa17a316b233"
+  integrity sha512-5+sFdU1HS/4aK9O7AsoLSNjG4f0UzlA3/nBHOPnWxxY2HRFnQp764tSsfSJRnGhM89Qxort6n2RzOusMoNP5ig==
 
 expo-permissions@^9.3.0:
   version "9.3.0"
